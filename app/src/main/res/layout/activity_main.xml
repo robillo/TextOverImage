@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.appbusters.robinkamboj.textoverimage.MainActivity">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="200sp"
+        android:layout_height="200sp">
+
+        <FrameLayout
+            android:layout_width="200sp"
+            android:layout_height="200sp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="15sp"
+                android:text="Text To Be Displayed Will Go Here."
+                android:layout_margin="5sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhiteShade"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</HorizontalScrollView>
