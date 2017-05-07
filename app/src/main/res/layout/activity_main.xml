@@ -12,12 +12,14 @@
 
         <FrameLayout
             android:layout_width="200sp"
-            android:layout_height="200sp">
+            android:layout_height="200sp"
+            android:layout_margin="5sp">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"/>
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/image1"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -26,7 +28,6 @@
                 android:textSize="20sp"
                 android:padding="15sp"
                 android:text="Text To Be Displayed Will Go Here."
-                android:layout_margin="5sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorWhiteShade"/>
 
