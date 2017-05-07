@@ -1,6 +1,8 @@
 package com.appbusters.robinkamboj.textoverimage;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -29,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(mImageView);
 
-        mBitmap = Bitmap.createBitmap(mImageView.getWidth(), mImageView.getHeight(), Bitmap.Config.ARGB_8888);
+        BitmapDrawable drawable = (BitmapDrawable) mImageView.getDrawable();
+        mBitmap = drawable.getBitmap();
+
         mImageProcessor.doInvert(mBitmap);
     }
 }
