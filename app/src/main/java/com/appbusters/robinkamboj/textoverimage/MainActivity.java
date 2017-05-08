@@ -18,7 +18,10 @@ import jp.wasabeef.glide.transformations.GrayscaleTransformation;
 import jp.wasabeef.glide.transformations.MaskTransformation;
 import jp.wasabeef.glide.transformations.gpu.BrightnessFilterTransformation;
 import jp.wasabeef.glide.transformations.gpu.ContrastFilterTransformation;
+import jp.wasabeef.glide.transformations.gpu.KuwaharaFilterTransformation;
 import jp.wasabeef.glide.transformations.gpu.SepiaFilterTransformation;
+import jp.wasabeef.glide.transformations.gpu.SketchFilterTransformation;
+import jp.wasabeef.glide.transformations.gpu.VignetteFilterTransformation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,5 +51,25 @@ public class MainActivity extends AppCompatActivity {
                 .load(R.drawable.image)
                 .bitmapTransform(new SepiaFilterTransformation(getApplicationContext(), 1.0f))
                 .into((ImageView) findViewById(R.id.image4));
+
+        Glide.with(this)
+                .load(R.drawable.image)
+                .bitmapTransform(new VignetteFilterTransformation(getApplicationContext()))
+                .into((ImageView) findViewById(R.id.image5));
+
+        Glide.with(this)
+                .load(R.drawable.image)
+                .bitmapTransform(new KuwaharaFilterTransformation(getApplicationContext(), 25))
+                .into((ImageView) findViewById(R.id.image6));
+
+        Glide.with(this)
+                .load(R.drawable.image)
+                .bitmapTransform(new BrightnessFilterTransformation(getApplicationContext(), 0.7f))
+                .into((ImageView) findViewById(R.id.image7));
+
+        Glide.with(this)
+                .load(R.drawable.image)
+                .bitmapTransform(new SketchFilterTransformation(getApplicationContext()))
+                .into((ImageView) findViewById(R.id.image8));
     }
 }

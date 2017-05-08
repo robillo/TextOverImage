@@ -121,6 +121,94 @@
 
         </FrameLayout>
 
+        <FrameLayout
+            android:layout_width="200sp"
+            android:layout_height="110sp"
+            android:layout_margin="10sp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/image5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="15sp"
+                android:text="Text To Be Displayed Will Go Here."
+                android:textStyle="bold"
+                android:textColor="@color/colorWhiteShade"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="200sp"
+            android:layout_height="110sp"
+            android:layout_margin="10sp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/image6"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="15sp"
+                android:text="Text To Be Displayed Will Go Here."
+                android:textStyle="bold"
+                android:textColor="@color/colorWhiteShade"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="200sp"
+            android:layout_height="110sp"
+            android:layout_margin="10sp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/image7"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="15sp"
+                android:text="Text To Be Displayed Will Go Here."
+                android:textStyle="bold"
+                android:textColor="@color/colorBlackShade"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="200sp"
+            android:layout_height="110sp"
+            android:layout_margin="10sp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/image8"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="15sp"
+                android:text="Text To Be Displayed Will Go Here."
+                android:textStyle="bold"
+                android:textColor="@color/colorWhiteShade"/>
+
+        </FrameLayout>
+
     </LinearLayout>
 
 </HorizontalScrollView>
