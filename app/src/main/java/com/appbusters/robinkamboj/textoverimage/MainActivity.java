@@ -1,6 +1,7 @@
 package com.appbusters.robinkamboj.textoverimage;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +10,18 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.mukesh.image_processing.ImageProcessor;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
+import jp.wasabeef.glide.transformations.ColorFilterTransformation;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+import jp.wasabeef.glide.transformations.GrayscaleTransformation;
+import jp.wasabeef.glide.transformations.MaskTransformation;
+import jp.wasabeef.glide.transformations.gpu.BrightnessFilterTransformation;
+import jp.wasabeef.glide.transformations.gpu.ContrastFilterTransformation;
+import jp.wasabeef.glide.transformations.gpu.SepiaFilterTransformation;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageProcessor mImageProcessor;
-    private ImageView mImageView;
     private Bitmap mBitmap;
 
     @Override
@@ -22,18 +29,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mImageView = (ImageView) findViewById(R.id.image1);
-        mImageProcessor = new ImageProcessor();
+        Glide.with(this)
+                .load(R.drawable.image)
+                .bitmapTransform(new GrayscaleTransformation(getApplicationContext()))
+                .into((ImageView) findViewById(R.id.image1));
 
         Glide.with(this)
                 .load(R.drawable.image)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(mImageView);
+                .bitmapTransform(new ColorFilterTransformation(getApplicationContext(), R.color.colorPrimary))
+                .into((ImageView) findViewById(R.id.image2));
 
-        BitmapDrawable drawable = (BitmapDrawable) mImageView.getDrawable();
-        mBitmap = drawable.getBitmap();
+        Glide.with(this)
+                .load(R.drawable.image)
+                .bitmapTransform(new BrightnessFilterTransformation(getApplicationContext(), -0.6f))
+                .into((ImageView) findViewById(R.id.image3));
 
-        mImageProcessor.doInvert(mBitmap);
+        Glide.with(this)
+                .load(R.drawable.image)
+                .bitmapTransform(new SepiaFilterTransformation(getApplicationContext(), 1.0f))
+                .into((ImageView) findViewById(R.id.image4));
     }
 }
